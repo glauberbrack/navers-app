@@ -45,7 +45,7 @@ export const ButtonCancel = styled(Button)`
     width: 48%;
     margin: 0;
     border: 1px solid ${colors.buttonBorder};
-    background: #FFF;
+    background: ${colors.background};
 `;
 
 export const TextButtonDeleteModal = styled.Text`

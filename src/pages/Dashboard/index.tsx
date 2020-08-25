@@ -4,7 +4,7 @@ import { Container, ViewButtons, LefText, AddButton, TextButton, List, ViewLoadi
 import { useNavigation } from '@react-navigation/native';
 import { useFocusEffect } from '@react-navigation/native';
 
-import UserItem, {UserItemProps} from '../../components/UserItem';
+import NaverItem, {NaverItemProps} from '../../components/NaverItem';
 import ContextData from '../../contexts/ContextData';
 import api, {config} from '../../services/api';
 
@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
     });
 
     const renderItem = ({ item }) => (
-        <UserItem user_naver={item} />
+        <NaverItem user_naver={item} />
     );
 
 
@@ -62,7 +62,7 @@ const Dashboard: React.FC = () => {
                         data={navers}
                         numColumns={2}
                         renderItem={renderItem}
-                        keyExtractor={(item: UserItemProps) => item.id}
+                        keyExtractor={(item: NaverItemProps) => item.id}
                     />
                 </List>
             }
