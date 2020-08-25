@@ -10,7 +10,7 @@ export const Container = styled.View`
     padding: 20px;
 `;
 
-export const ViewButtons = styled.View`
+export const Header = styled.View`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,21 +18,21 @@ export const ViewButtons = styled.View`
     margin: 28px 0;
 `;
 
-export const LefText = styled.Text`
+export const LeftHeader = styled.Text`
     font-family: 'Montserrat_600SemiBold';
     font-size: 22px;
     line-height: 32px;
     color: ${colors.textBase};
 `;
 
-export const AddButton = styled(Button)`
+export const RightHeader = styled(Button)`
     background: ${colors.buttonDarkBackground};;
     margin: 0;
     max-width: 155px;
 `;
 
 export const TextButton = styled.Text`
-    color: #FFF;
+    color: ${colors.textLight};
     font-style: normal;
     font-family: 'Montserrat_600SemiBold';
     font-size: 14px;
@@ -40,20 +40,8 @@ export const TextButton = styled.Text`
     text-align: center;
 `;
 
-export const List = styled.View`
-    margin-bottom: 70px;
-`;
-
-
 export const ViewLoading = styled.View`
     flex: 1;
     justify-content: center;
     align-items: center;
 `;
-
-export const styles = StyleSheet.create({
-    flatList: {
-        width: 156,
-        height: 156
-    },
-})

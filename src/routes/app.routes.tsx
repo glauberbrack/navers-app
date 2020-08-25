@@ -58,7 +58,7 @@ const AppRoutes: React.FC = ({navigation}) => {
         headerBackTitleVisible: false,
         headerTitle: () => ( <Image source={logo} resizeMode="contain" style={{  margin: 16, height: 32, width: 190 }} /> ), 
         headerTintColor: "#000",
-        headerStyle: { height: 120, backgroundColor: '#FFF' }, 
+        headerStyle: { height: 120, backgroundColor: '#FAFAFA' }, 
         headerTitleAlign: 'center'
     }
 
@@ -68,7 +68,8 @@ const AppRoutes: React.FC = ({navigation}) => {
             options={{
                 headerTitle: () => ( <Image source={logo} resizeMode="contain" style={{ margin: 16, height: 32, width: 190, }} /> ), 
                 headerTintColor: "#fff",
-                headerStyle: { height: 120, backgroundColor: '#FFF' }, 
+                headerStyle: { height: 120, backgroundColor: '#FAFAFA',  shadowOpacity: 0, shadowOffset: { height: 0, width: 0, } }, 
+                cardShadowEnabled: true, 
                 headerTitleAlign: 'center',
                 headerLeft: () => (
                     <TouchableOpacity onPress={() => { navigation.openDrawer(); }} style={{ marginLeft: 15 }}>

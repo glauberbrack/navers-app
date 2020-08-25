@@ -1,10 +1,10 @@
 import React, { useState,useContext } from 'react';
-import { FlatList, ActivityIndicator } from 'react-native';
-import { Container, ViewButtons, LefText, AddButton, TextButton, List, ViewLoading, styles } from './style';
+import { ScrollView, FlatList, ActivityIndicator } from 'react-native';
+import { Container, Header, LeftHeader, RightHeader, TextButton,  ViewLoading } from './style';
 import { useNavigation } from '@react-navigation/native';
 import { useFocusEffect } from '@react-navigation/native';
 
-import NaverItem, {NaverItemProps} from '../../components/NaverItem';
+import NaverItem, { NaverItemProps } from '../../components/NaverItem';
 import ContextData from '../../contexts/ContextData';
 import api, {config} from '../../services/api';
 
@@ -21,8 +21,8 @@ const Dashboard: React.FC = () => {
     }
 
     const loadNavers = async () => {
-        try{
-            const response = await api.get('/navers',config(user.token));
+        try {
+            const response = await api.get('/navers', config(user.token));
             setNavers(response.data);
             setLoadingList(false);
         } catch(err) {
@@ -41,30 +41,28 @@ const Dashboard: React.FC = () => {
 
     return (
         <Container>
+            <Header>
 
+                <LeftHeader>Navers</LeftHeader>
 
-            <ViewButtons>
-
-                <LefText>Navers</LefText>
-
-                <AddButton onPress={handleAddNaver}>
+                <RightHeader onPress={handleAddNaver}>
                     <TextButton>Adicionar naver</TextButton>
-                </AddButton>
+                </RightHeader>
 
-            </ViewButtons>
+            </Header>
 
             { loadingList ? <ViewLoading>
                 <ActivityIndicator color="#212121" size={35} />
             </ViewLoading> :
 
-                <List>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <FlatList
                         data={navers}
                         numColumns={2}
                         renderItem={renderItem}
                         keyExtractor={(item: NaverItemProps) => item.id}
                     />
-                </List>
+                </ScrollView>
             }
 
         </Container>
