@@ -6,6 +6,7 @@ const Button = styled(RectButton)`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     
     height: 40px;
     width: 100%;

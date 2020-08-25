@@ -1,9 +1,10 @@
-import styled from 'styled-components/native';
+ import styled from 'styled-components/native';
+ import { colors } from '../../assets/styles/global';
 
 export const ModalView = styled.View`
-    height: 150px;
-    background-color: #FFF;
-    padding: 20px;
+    height: 112px;
+    background: ${colors.background};
+    padding: 16px;
 `;
 
 export const ViewTitle = styled.View`
@@ -13,15 +14,15 @@ export const ViewTitle = styled.View`
 `;
 
 export const TitleModal = styled.Text`
-    color: #212121;
+    color: ${colors.textTitle};
     font-family: 'Montserrat_600SemiBold';
-    font-size: 26px;
-    line-height: 30px;
+    font-size: 22px;
+    line-height: 32px;
 `;
 
 export const MessageModal = styled.Text`
-    color: #212121;
-    font-family: 'Montserrat_500Medium';
-    font-size: 20px;
-    line-height: 72px;
+    color: ${colors.textBase};
+    font-family: 'Montserrat_400Regular';
+    font-size: 16px;
+    line-height: 24px;
 `;

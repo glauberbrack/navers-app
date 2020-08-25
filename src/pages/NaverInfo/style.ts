@@ -1,89 +1,78 @@
-import styled from 'styled-components/native';
+ import styled from 'styled-components/native';
+ import Button from '../../components/Button';
+import { colors } from '../../assets/styles/global';
 
 export const Container = styled.View`
-    background-color: #FFF;
+    background: ${colors.background};
     flex: 1;
 `;
 
-export const ViewImage = styled.View`
+export const NaverImage = styled.Image`
     width: 100%;
-    height: 400px;
-    background-color: #c1c1c1;
+    height: 288px;
 `;
 
-export const ImageNaverInfo = styled.Image`
-    width: 100%;
-    height: 400px;
-`;
-
-export const ViewInfoNaverInfo = styled.View`
+export const InfoContainer = styled.View`
     margin-top: 10px;
-    padding: 20px;
+    padding: 16px;
 `;
 
-export const NaverInfoName = styled.Text`
+export const NaverName = styled.Text`
     font-family: 'Montserrat_600SemiBold';
-    font-size: 28px;
-    line-height: 30px;
-`;
-
-export const OfficeNaverInfo = styled.Text`
-    font-family: 'Montserrat_400Regular';
     font-size: 22px;
-    line-height: 35px;
-`;
-
-export const TextInfo = styled.Text`
-    margin-top: 12px;
-    font-family: 'Montserrat_600SemiBold';
-    font-size: 20px;
-`;
-
-export const TextDetail = styled.Text`
-    font-family: 'Montserrat_400Regular';
-    font-size: 18px;
     line-height: 32px;
+    color: ${colors.textTitle};
 `;
 
-export const ViewButtons = styled.View`
+export const NaverDetails = styled.Text`
+    font-family: 'Montserrat_400Regular';
+    font-size: 16px;
+    line-height: 24px;
+    color: ${colors.textBase};
+`;
+
+export const NaverTextTitle = styled.Text`
+    font-family: 'Montserrat_600SemiBold';
+    font-size: 16px;
+    color: ${colors.textTitle};
+   
+    margin-top: 12px;
+`;
+
+
+export const ActionButtons = styled.View`
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 32px;
+    width: 100%;
 `;
 
-export const ButtonDeleteNaverInfo = styled.TouchableOpacity`
-    width: 190px;
-    height: 45px;
-    border: 1px;
-    border-style: solid;
-    border-color: #212121;
-    background-color: #FFF;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+
+export const DeleteButton = styled(Button)`
+    width: 48%;
+    margin: 0;
+    border: 1px solid ${colors.buttonBorder};
+    background: ${colors.background};
 `;
 
-export const ButtonEditNaverInfo = styled.TouchableOpacity`
-    width: 190px;
-    height: 45px;
-    background-color: #212121;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+export const EditButton = styled(Button)`
+    width: 48%;
+    margin: 0;
+`;
+
+
+export const TextButtonDelete = styled.Text`
+    font-family: 'Montserrat_600SemiBold';
+    font-size: 14px;
+    color: ${colors.textBase};
+    line-height: 24px;
+    margin-left: 8px;
 `;
 
 export const TextButtonEdit = styled.Text`
     font-family: 'Montserrat_600SemiBold';
-    font-size: 18px;
-    color: #FFF;
-    line-height: 20px;
-    margin-left: 5px;
-`;
-
-export const TextButtonDelete = styled.Text`
-    font-family: 'Montserrat_600SemiBold';
-    font-size: 18px;
-    color: #212121;
-    line-height: 20px;
-    margin-left: 5px;
+    font-size: 14px;
+    color: ${colors.textLight};
+    line-height: 24px;
+    margin-left: 8px;
 `;

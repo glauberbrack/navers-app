@@ -54,6 +54,19 @@ const DrawerUser = () => {
 
 const AppRoutes: React.FC = ({navigation}) => {
 
+    const navigationOptionsDashboard = {
+        headerTitle: () => ( <Image source={logo} resizeMode="contain" style={{ margin: 16, height: 32, width: 190, }} /> ), 
+                headerTintColor: "#fff",
+                headerStyle: { height: 120, backgroundColor: '#FAFAFA' }, 
+                cardShadowEnabled: true, 
+                headerTitleAlign: 'center',
+                headerLeft: () => (
+                    <TouchableOpacity onPress={() => { navigation.openDrawer(); }} style={{ marginLeft: 15 }}>
+                        <SvgUri width="25" height="25" source={menuImg}/> 
+                    </TouchableOpacity>
+                )
+    }
+
     const navigationOptionsBack = {
         headerBackTitleVisible: false,
         headerTitle: () => ( <Image source={logo} resizeMode="contain" style={{  margin: 16, height: 32, width: 190 }} /> ), 
@@ -62,20 +75,11 @@ const AppRoutes: React.FC = ({navigation}) => {
         headerTitleAlign: 'center'
     }
 
+
     return(
         <Stack.Navigator>
             <Stack.Screen name="Dashboard" component={Dashboard} 
-            options={{
-                headerTitle: () => ( <Image source={logo} resizeMode="contain" style={{ margin: 16, height: 32, width: 190, }} /> ), 
-                headerTintColor: "#fff",
-                headerStyle: { height: 120, backgroundColor: '#FAFAFA',  shadowOpacity: 0, shadowOffset: { height: 0, width: 0, } }, 
-                cardShadowEnabled: true, 
-                headerTitleAlign: 'center',
-                headerLeft: () => (
-                    <TouchableOpacity onPress={() => { navigation.openDrawer(); }} style={{ marginLeft: 15 }}>
-                        <SvgUri width="25" height="25" source={menuImg}/> 
-                    </TouchableOpacity>
-                ),}} />
+            options={navigationOptionsDashboard} />
 
             <Stack.Screen name="NaverInfo" component={NaverInfo} options={navigationOptionsBack} />
             <Stack.Screen name="AddNaver" component={NaverForm} options={navigationOptionsBack} />
