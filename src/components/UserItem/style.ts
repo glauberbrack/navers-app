@@ -8,8 +8,8 @@ export const ViewUser = styled.View`
 `;
 
 export const ImageUser = styled.Image`
-    width: 190px;
-    height: 190px;
+    width: 156px;
+    height: 156px;
     resize-mode: contain;
 `;
 

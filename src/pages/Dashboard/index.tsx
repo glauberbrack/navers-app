@@ -1,6 +1,6 @@
 import React, { useState,useContext } from 'react';
 import { FlatList, ActivityIndicator } from 'react-native';
-import { Container, ViewButtons, TextInit, ButtonAddNaver, TextButton, List, ViewLoading } from './style';
+import { Container, ViewButtons, LefText, AddButton, TextButton, List, ViewLoading, styles } from './style';
 import { useNavigation } from '@react-navigation/native';
 import { useFocusEffect } from '@react-navigation/native';
 
@@ -14,7 +14,6 @@ const Dashboard: React.FC = () => {
     const { navigate } = useNavigation();
     const { user } = useContext(ContextData);
     const [navers, setNavers] = useState([]);
-    const [modalVisible, setModalVisible] = useState(false);
     const [loadingList, setLoadingList] = useState(true);
 
     function handleAddNaver() {
@@ -46,11 +45,11 @@ const Dashboard: React.FC = () => {
 
             <ViewButtons>
 
-                <TextInit>Navers</TextInit>
+                <LefText>Navers</LefText>
 
-                <ButtonAddNaver onPress={handleAddNaver}>
+                <AddButton onPress={handleAddNaver}>
                     <TextButton>Adicionar naver</TextButton>
-                </ButtonAddNaver>
+                </AddButton>
 
             </ViewButtons>
 
@@ -58,7 +57,7 @@ const Dashboard: React.FC = () => {
                 <ActivityIndicator color="#212121" size={35} />
             </ViewLoading> :
 
-                <List >
+                <List>
                     <FlatList
                         data={navers}
                         numColumns={2}
