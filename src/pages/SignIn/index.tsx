@@ -6,13 +6,13 @@ import ContextData from '../../contexts/ContextData';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import logoImg from '../../assets/logo.png';
+import logo from '../../assets/logo.png';
 
 const SignIn: React.FC = () => {
     const { signIn, loading, errorSignIn } = useContext(ContextData);
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('glauber@brack.com.br');
+    const [password, setPassword] = useState('123456');
 
     function handleSignIn() {
         signIn(email, password);
@@ -20,7 +20,7 @@ const SignIn: React.FC = () => {
 
     return (
         <Container>
-            <Logo source={logoImg} />
+            <Logo source={logo} />
             
              { errorSignIn ? 
                     <ViewError>
@@ -29,7 +29,7 @@ const SignIn: React.FC = () => {
                     null
                 }
 
-                <Input type="default" autoCapitalize="none" placeText="E-mail" value={email} onChangeText={(e) => { setEmail(e) }} />
+                <Input type="email" autoCapitalize="none" placeText="E-mail" value={email} onChangeText={(e) => { setEmail(e) }} />
 
                 <Input type="default" autoCapitalize="none" secureTextEntry={true} placeText="Senha" value={password} onChangeText={(e) => { setPassword(e) }} />
 
