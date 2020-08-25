@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Container, TextInit, ButtonSave, TextButton } from './style';
+import { Container, HeaderText, SaveButton, TextButton } from './style';
 import { KeyboardAvoidingView, ActivityIndicator } from 'react-native';
 import { ScrollView } from 'react-native';
 import { format } from 'date-fns';
@@ -21,7 +21,7 @@ interface Naver {
 }
 
 const NaverForm: React.FC<Naver> = ({route}) => {
-    const {user} = useContext(ContextData);
+    const { user } = useContext(ContextData);
     const [name, setName] = useState('');
     const [jobRole, setJobRole] = useState('');
     const [birthdate, setBirthdate] = useState('');
@@ -71,12 +71,12 @@ const NaverForm: React.FC<Naver> = ({route}) => {
     async function handleSaveForm() {
 
         if(name == '' && jobRole == '' && birthdate == '' && admissionDate == '' && project == '' && url == '' ){
-            console.log('Tem campos vazios');
+            console.log('Campos Vazios');
         } else {
             
             setLoading(true);
 
-            if(id) { // UPDATE
+            if(id) {
                 
                 const params = JSON.stringify({
                     "job_role": jobRole,
@@ -99,7 +99,7 @@ const NaverForm: React.FC<Naver> = ({route}) => {
                     
                 });
 
-            } else { // CREATE
+            } else { 
                 const params = JSON.stringify({
                     "job_role": jobRole,
                     "admission_date": admissionDate,
@@ -116,8 +116,8 @@ const NaverForm: React.FC<Naver> = ({route}) => {
                     
                 }).catch(err => {
                     setLoading(false);
-                    titleModal = 'Ocorreu um erro';
-                    messageModal = 'Não foi possível adicionar o naver!';
+                    titleModal = 'Ocorreu um erro!';
+                    messageModal = 'Tente novamente mais tarde.';
                    
                 });
             }
@@ -135,7 +135,7 @@ const NaverForm: React.FC<Naver> = ({route}) => {
 
             <KeyboardAvoidingView>
                 <ScrollView>
-                    <TextInit>{ pageName }</TextInit>
+                    <HeaderText>{ pageName }</HeaderText>
 
                     <Input placeText="Nome" value={name} onChangeText={(text) => { setName(text) }} />
                     <Input placeText="Cargo" value={jobRole} onChangeText={(text) => { setJobRole(text) }} />
@@ -144,9 +144,9 @@ const NaverForm: React.FC<Naver> = ({route}) => {
                     <Input placeText="Projeto que participou" value={project} onChangeText={(text) => { setProject(text) }}/>
                     <Input placeText="URL da foto naver" value={url} onChangeText={(text) => { setUrl(text) }}/>
 
-                    <ButtonSave onPress={handleSaveForm}>
+                    <SaveButton onPress={handleSaveForm}>
                         <TextButton>Salvar</TextButton>
-                    </ButtonSave>
+                    </SaveButton>
                 </ScrollView>
             </KeyboardAvoidingView>
 

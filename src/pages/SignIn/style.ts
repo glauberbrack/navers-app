@@ -20,7 +20,7 @@ export const Logo = styled.Image`
 `;
 
 export const TextButton = styled.Text`
-    font-family: 'Montserrat_500Medium';
+    font-family: 'Montserrat_600SemiBold';
     font-size: 14px;
     line-height: 24px;
     color:  ${colors.textLight};

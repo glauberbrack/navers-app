@@ -1,32 +1,30 @@
 import styled from 'styled-components/native';
+import Button from '../../components/Button';
+import { colors } from '../../assets/styles/global';
 
 export const Container = styled.View`
     flex: 1;
-    padding: 15px;
-    background-color: #FFF;
+    padding: 16px;
+    background: ${colors.background};
 `;
 
-export const TextInit = styled.Text`
+export const HeaderText = styled.Text`
     font-family: 'Montserrat_600SemiBold';
-    font-size: 28px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    font-size: 22px;
+    margin-top: 16px;
+    margin-bottom: 24px;
     text-align: center;
 `;
 
-export const ButtonSave = styled.TouchableOpacity`
-    width: 100%;
-    height: 40px;
-    background-color: #212121;
-    padding: 10px;
+export const SaveButton = styled(Button)`
     margin-top: 10px;
 `;
 
 export const TextButton = styled.Text`
-    font-family: 'Montserrat_500Medium';
+    font-family: 'Montserrat_600SemiBold';
     font-size: 14px;
-    line-height: 20px;
-    color: #FFF;
+    line-height: 24px;
+    color: ${colors.textLight};
     display: flex;
     align-items: center;
     text-align: center;

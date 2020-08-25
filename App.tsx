@@ -10,18 +10,14 @@ import { ContextProvider } from './src/contexts/ContextData';
 
 import {
   Montserrat_400Regular,
-  Montserrat_500Medium,
   Montserrat_600SemiBold,
-  Montserrat_700Bold,
   useFonts
 } from '@expo-google-fonts/montserrat';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
-    Montserrat_500Medium,
     Montserrat_600SemiBold,
-    Montserrat_700Bold,
   });
   
 
