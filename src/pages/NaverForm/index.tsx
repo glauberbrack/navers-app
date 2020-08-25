@@ -44,7 +44,7 @@ const NaverForm: React.FC<Naver> = ({route}) => {
         const loadEditNaver = async () => {
             setLoading(true);
             try {
-                const response = await api.get('/navers/' + id, config(user.token));
+                const response = await api.get('/navers/' + id);
                 setName(response.data.name);
                 setJobRole(response.data.job_role);
                 setBirthdate(format(new Date(response.data.birthdate), 'dd/MM/yyyy'));
@@ -126,7 +126,6 @@ const NaverForm: React.FC<Naver> = ({route}) => {
 
     return(
         <Container>
-
             <ModalMessage title={titleModal} message={messageModal} show={modal} url="Dashboard" />
 
             <Modal isVisible={loading} >

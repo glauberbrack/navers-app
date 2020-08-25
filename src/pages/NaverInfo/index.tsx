@@ -15,7 +15,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation} from '@react-navigation/native';
 
-import api, { config } from '../../services/api';
+import api from '../../services/api';
 import ContextData from '../../contexts/ContextData';
 import converterDateInYear from '../../utils/converterDateInYear';
 import ModalDelete from '../../components/ModalDelete';
@@ -40,7 +40,7 @@ const NaverInfo: React.FC<Naver> = ({route}) => {
 
     const loadNaver = async () => {
         try {
-            const response = await api.get('/navers/' + id, config(user.token));
+            const response = await api.get('/navers/' + id);
             setNaver(response.data);
         } catch(err) {
             console.log(err);

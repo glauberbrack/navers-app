@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useFocusEffect } from '@react-navigation/native';
 
 import NaverItem, { NaverItemProps } from '../../components/NaverItem';
-import ContextData from '../../contexts/ContextData';
+import ContextData, { getToken } from '../../contexts/ContextData';
 import api, {config} from '../../services/api';
 
 
@@ -22,7 +22,7 @@ const Dashboard: React.FC = () => {
 
     const loadNavers = async () => {
         try {
-            const response = await api.get('/navers', config(user.token));
+            const response = await api.get('/navers');
             setNavers(response.data);
             setLoadingList(false);
         } catch(err) {

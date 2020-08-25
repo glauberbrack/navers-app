@@ -3,9 +3,8 @@ import { ModalDeleteView, ViewDeleteTitle, TitleModalDelete, MessageModalDelete,
 import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
-import { useNavigation } from '@react-navigation/native';
 
-import api, { config } from '../../services/api';
+import api  from '../../services/api';
 import ModalMessage from '../ModalMessage';
 import ContextData from '../../contexts/ContextData';
 
@@ -43,7 +42,7 @@ const ModalDelete: React.FC<ModalProps> = ({ title, message, show, id, close}) =
 
         if (id) {
 
-            api.delete('/navers/'+ id, config(user.token)).
+            api.delete('/navers/'+ id).
             then(response => {
                 setModalMessageVisible(true);
                 setVisible(false);

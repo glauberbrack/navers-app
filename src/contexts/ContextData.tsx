@@ -1,4 +1,6 @@
 import React, { useState, createContext } from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
+
 import api, { config } from '../services/api';
 
 interface ContextDataInfo {
@@ -12,6 +14,8 @@ interface ContextDataInfo {
 }
 
 const ContextData = createContext<ContextDataInfo>({} as ContextDataInfo);
+
+export const getToken = async () => await AsyncStorage.getItem('@Navers:token');
 
 export const ContextProvider: React.FC = ({children}) => {
 
@@ -30,10 +34,22 @@ export const ContextProvider: React.FC = ({children}) => {
         });
 
         try{
-            const response = await api.post('/users/login', params, config());
+            const response = await api.post('/users/login', params, config()); 
             const { data } = response;
+                       
+            AsyncStorage.setItem('@Navers:token', data.token);
+
+            
+
             setUser(data);
             setLoading(false);
+
+            if (data.token) {
+                api.defaults.headers.authorization = `Bearer ${data.token}`;
+          
+                return data
+            }
+            
 
         } catch(err) {
             setErrorSignIn(true);
