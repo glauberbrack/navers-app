@@ -10,7 +10,7 @@ import NaverInfo from '../pages/NaverInfo';
 import NaverForm from '../pages/NaverForm';
 import ContextData from '../contexts/ContextData';
 
-import logoImg from '../assets/logo.png';
+import logo from '../assets/logo.png';
 import menuImg from '../assets/menu.svg';
 
 
@@ -27,7 +27,7 @@ const ItemLogout = (props) => {
           <DrawerItemList {...props} />
           <DrawerItem 
             label="Sair" 
-            labelStyle={{fontSize: 24, color: '#000', fontFamily: 'Montserrat_600SemiBold'}}
+            labelStyle={{ fontSize: 22, color: '#212121', fontFamily: 'Montserrat_600SemiBold' }}
             style={{ alignItems: 'center' }}
             onPress={() => { signOut(); }} />
         </DrawerContentScrollView>
@@ -42,7 +42,7 @@ const DrawerUser = () => {
             drawerContentOptions={{
                 activeTintColor: '#FFF',
                 itemStyle: { marginVertical: 5, alignItems: 'center' },
-                labelStyle: { fontSize: 24, color: '#000', fontFamily: 'Montserrat_600SemiBold',},
+                labelStyle: { fontSize: 22, color: '#212121', fontFamily: 'Montserrat_600SemiBold',},
                 style: { marginTop: 350} }}
         >
             <Drawer.Screen name="Navers" component={AppRoutes}  />
@@ -56,22 +56,22 @@ const AppRoutes: React.FC = ({navigation}) => {
 
     const navigationOptionsBack = {
         headerBackTitleVisible: false,
-        headerTitle: () => ( <Image source={logoImg} resizeMode="contain" style={{  margin: 16, height: 32, width: 190 }} /> ), 
+        headerTitle: () => ( <Image source={logo} resizeMode="contain" style={{  margin: 16, height: 32, width: 190 }} /> ), 
         headerTintColor: "#000",
         headerStyle: { height: 120, backgroundColor: '#FFF' }, 
-        headerTitleAlign: "center"
+        headerTitleAlign: 'center'
     }
 
     return(
         <Stack.Navigator>
             <Stack.Screen name="Dashboard" component={Dashboard} 
             options={{
-                headerTitle: () => ( <Image source={logoImg} resizeMode="contain" style={{ margin: 16, height: 32, width: 190, }} /> ), 
+                headerTitle: () => ( <Image source={logo} resizeMode="contain" style={{ margin: 16, height: 32, width: 190, }} /> ), 
                 headerTintColor: "#fff",
                 headerStyle: { height: 120, backgroundColor: '#FFF' }, 
-                headerTitleAlign: "center",
+                headerTitleAlign: 'center',
                 headerLeft: () => (
-                    <TouchableOpacity onPress={() => { navigation.openDrawer(); }} style={{marginLeft: 15}}>
+                    <TouchableOpacity onPress={() => { navigation.openDrawer(); }} style={{ marginLeft: 15 }}>
                         <SvgUri width="25" height="25" source={menuImg}/> 
                     </TouchableOpacity>
                 ),}} />

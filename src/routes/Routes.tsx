@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 
-import AuthRoutes from './AuthRoutes';
-import DrawerUser from './AppRoutes';
+import AuthRoutes from './auth.routes';
+import DrawerUser from './app.routes';
 import ContextData from '../contexts/ContextData';
 
 const Routes = () => {

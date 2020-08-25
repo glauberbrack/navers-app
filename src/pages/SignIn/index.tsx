@@ -9,7 +9,6 @@ import Button from '../../components/Button';
 import logoImg from '../../assets/logo.png';
 
 const SignIn: React.FC = () => {
-
     const { signIn, loading, errorSignIn } = useContext(ContextData);
 
     const [email, setEmail] = useState('');
@@ -32,7 +31,7 @@ const SignIn: React.FC = () => {
 
                 <Input type="default" autoCapitalize="none" placeText="E-mail" value={email} onChangeText={(e) => { setEmail(e) }} />
 
-                <Input type="default" placeText="Senha" security={true} value={password} onChangeText={(e) => { setPassword(e) }} />
+                <Input type="default" autoCapitalize="none" secureTextEntry={true} placeText="Senha" value={password} onChangeText={(e) => { setPassword(e) }} />
 
                 <Button onPress={() => { 
                     Keyboard.dismiss();
